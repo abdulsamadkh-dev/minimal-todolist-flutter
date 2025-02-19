@@ -29,13 +29,12 @@ void main() async {
         create: (context) =>
             TaskListBloc(context.read<Repository<TaskEntity>>()),
       ),
-    ], child: const MyApp()),
+    ], child: const TodoListApp()),
   );
 }
 
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class TodoListApp extends StatelessWidget {
+  const TodoListApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -43,7 +42,8 @@ class MyApp extends StatelessWidget {
     const primaryTextColor = Color(0xff1D2830);
 
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'MINIMAL TODO LIST - FLUTTER',
       theme: ThemeData(
           textTheme: GoogleFonts.poppinsTextTheme(
             const TextTheme(
